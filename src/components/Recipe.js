@@ -1,17 +1,17 @@
 import React from "react";
 import Button from '../Styles/Button';
 import Center from '../Styles/Grid/Center';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { deleteRecipe } from "../actions/actions-types";
 
 function Recipe() {
   
   const { recipes, count, message } = useSelector((state) => state);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const handleDelete = (recipe) => {
-    console.log("hi")
-    // dispatch(deleteRecipe(recipe));
+    // console.log("hi")
+    dispatch(deleteRecipe(recipe));
   };
   return (
     <div>
