@@ -28,9 +28,9 @@ function App() {
       <Row>
         <Column number={1}>
         <Routes>
-        <Route path="/recipes" element={<Recipe />} />
-        <Route path="/recipes/:recipeIndex" element={<RecipeDetail />} />
-      </Routes>
+          <Route path="/" element={<Recipe />} />
+          <Route path="/recipes/:recipeIndex" element={<RecipeDetail />} />
+        </Routes>
         </Column>
       </Row>
         
