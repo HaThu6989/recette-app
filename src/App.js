@@ -8,6 +8,8 @@ import Form from './components/Form';
 import Column from './Styles/Grid/Column';
 import Container from './Styles/Grid/Container';
 import Row from './Styles/Grid/Row';
+import { Route, Routes } from "react-router-dom";
+import RecipeDetail from "./components/RecipeDetail";
 
 function App() {
   const{ count, message} = useSelector(state => state)
@@ -25,7 +27,10 @@ function App() {
       
       <Row>
         <Column number={1}>
-          <Recipe />
+        <Routes>
+        <Route path="/recipes" element={<Recipe />} />
+        <Route path="/recipes/:recipeIndex" element={<RecipeDetail />} />
+      </Routes>
         </Column>
       </Row>
         
@@ -43,9 +48,10 @@ function App() {
         </Column>
       </Row>
       {/* <div className="App">
-        <Recipe />
-      </div> */}
+      
+    </div> */}
     </Container>
+    
   );
 }
 
