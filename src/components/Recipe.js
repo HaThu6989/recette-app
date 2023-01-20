@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
+import Button from '../Styles/Button';
+import Center from '../Styles/Grid/Center';
 function Recipe() {
   const { recipes, count, message } = useSelector((state) => state);
   return (
@@ -10,9 +11,13 @@ function Recipe() {
         {recipes.map((recipe, index) => {
           return (
             <li key={index}>
+            <Center>
               {recipe}
-              <button>Delete</button>
-              <button>Detail</button>
+              <br/>
+              <Button>Delete</Button>
+              <Button>Detail</Button>
+            </Center>
+              
             </li>
           );
         })}
